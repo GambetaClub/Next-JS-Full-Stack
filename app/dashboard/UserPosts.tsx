@@ -13,7 +13,7 @@ const fetchUserPosts = async () => {
 export default function UserPosts() {
 	const { data, isLoading } = useQuery<UserPost>({
 		queryFn: fetchUserPosts,
-		queryKey: ['userPosts'],
+		queryKey: ['user-posts'],
 	})
 	console.log('🚀 ~ file: UserPosts.tsx:18 ~ UserPosts ~ data:', data)
 	if (isLoading) return 'Getting your posts...'
