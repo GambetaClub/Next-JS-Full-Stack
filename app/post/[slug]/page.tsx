@@ -12,6 +12,17 @@ type URL = {
 	}
 }
 
+type Comment = {
+	id: string
+	user: {
+		name: string
+		image: string
+	}
+	createdAt: string
+	message: string
+	// Add other properties if necessary
+}
+
 const fetchDetails = async (slug: string) => {
 	const response = await axios.get(`/api/posts/${slug}`)
 	return response.data
@@ -34,7 +45,7 @@ export default function PostDetail(url: URL) {
 				comments={data.comments}
 			/>
 			<AddComment id={data?.id} />
-			{data?.comments?.map((comment) => (
+			{data?.comments?.map((comment: Comment) => (
 				<div key={comment.id} className="bg-white my-8 p-8 rounded-lg">
 					<div className="flex items-center gap-2">
 						<Image
