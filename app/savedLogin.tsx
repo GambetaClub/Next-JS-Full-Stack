@@ -1,11 +1,10 @@
-"use client"
+'use client'
 import Image from 'next/image'
 import { useFormik } from 'formik'
 import formImage from '../public/form.jpg'
 import * as Yup from 'yup'
 
 export default function Home() {
-
 	const formik = useFormik({
 		// Initial values
 		initialValues: {
@@ -35,7 +34,7 @@ export default function Home() {
 			>
 				<div className="flex-1 text-gray-700 p-20">
 					<h1 className="text-3xl pb-2 font-latoBold">
-						Let's get started 👏
+						{"Let's get started 👏"}
 					</h1>
 					<p className="text-lg text-gray-500">
 						Join the best reservations system tennis courts that
