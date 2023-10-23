@@ -6,12 +6,13 @@ export default async function handler(
 	res: NextApiResponse
 ) {
 	if (req.method == 'GET') {
-		// Get User Posts
+
+        const details = Array.isArray(req.query.details) ? req.query.details[0] : req.query.details;
 		try {
             console.log(req.query)
             const data = await prisma.post.findUnique({
                 where: 
-                    {id: req.query.details},
+                    {id: details},
                 include: {
                     user: true,
                     comments: {
